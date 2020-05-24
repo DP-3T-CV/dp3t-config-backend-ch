@@ -14,4 +14,4 @@ RUN ["mvn", "package"]
 RUN ls -a target
 EXPOSE 8113
 CMD ["java","-Dspring.profiles.active=dev","-jar","target/dpppt-config-backend-1.0.0-SNAPSHOT.jar"]
-root@tm-dok-02:/home/admin01/dp3t-config-backend-ch/dpppt-config-backend#
+
