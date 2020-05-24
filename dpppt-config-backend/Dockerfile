@@ -12,6 +12,6 @@ ADD pom.xml /code/pom.xml
 ADD src /code/src
 RUN ["mvn", "package"]
 RUN ls -a target
-EXPOSE 8113
+EXPOSE 8080
 CMD ["java","-Dspring.profiles.active=dev","-jar","target/dpppt-config-backend-1.0.0-SNAPSHOT.jar"]
 
