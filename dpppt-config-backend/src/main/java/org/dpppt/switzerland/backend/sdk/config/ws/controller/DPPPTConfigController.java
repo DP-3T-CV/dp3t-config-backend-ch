@@ -50,7 +50,7 @@ public class DPPPTConfigController {
 		if (buildnr.equals("ios-200524.1316.87")) {
 			config.getiOSGaenSdkConfig().setFactorHigh(0.0d);
 		}
-		return ResponseEntity.ok().cacheControl(CacheControl.maxAge(Duration.ofMinutes(10))).body(config);
+		return ResponseEntity.ok().cacheControl(CacheControl.maxAge(Duration.ofMinutes(5))).body(config);
 	}
 
 	@CrossOrigin(origins = { "https://editor.swagger.io" })
@@ -94,6 +94,12 @@ public class DPPPTConfigController {
 
 		SDKConfig config = new SDKConfig();
 		configResponse.setSdkConfig(config);
+		return configResponse;
+	}
+	
+	public ConfigResponse mockConfigResponseWithForceUpdate() {
+		ConfigResponse configResponse = new ConfigResponse();
+		configResponse.setForceUpdate(true);
 		return configResponse;
 	}
 }
