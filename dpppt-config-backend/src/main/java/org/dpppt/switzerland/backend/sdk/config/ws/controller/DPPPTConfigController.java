@@ -32,6 +32,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class DPPPTConfigController {
 
 	private static final Logger logger = LoggerFactory.getLogger(DPPPTConfigController.class);
+	private final String tweakCode;
+
+	public DPPPTConfigController(String tweakCode) {
+		this.tweakCode = tweakCode;
+	}
 
 	@CrossOrigin(origins = { "https://editor.swagger.io" })
 	@GetMapping(value = "")
@@ -50,6 +55,7 @@ public class DPPPTConfigController {
 		if (buildnr.equals("ios-200524.1316.87")) {
 			config.getiOSGaenSdkConfig().setFactorHigh(0.0d);
 		}
+		config.setTweakCode(this.tweakCode);
 		return ResponseEntity.ok().cacheControl(CacheControl.maxAge(Duration.ofMinutes(5))).body(config);
 	}
 
@@ -85,21 +91,66 @@ public class DPPPTConfigController {
 		infoBoxen.setTitle("Hinweis EN");
 		infoBoxen.setUrlTitle("Und ein externer Link EN");
 		infoBoxen.setUrl("https://www.bag.admin.ch/bag/en/home.html");
+		InfoBox infoBoxpt = new InfoBox();
+		infoBoxpt.setMsg("Hier steht ein Text. Das kann ein Hinweis sein. Je länger umso mehr Platz PT");
+		infoBoxpt.setTitle("Hinweis PT");
+		infoBoxpt.setUrlTitle("Und ein externer Link PT");
+		infoBoxpt.setUrl("https://www.bag.admin.ch/bag/pt/home.html");
+		InfoBox infoBoxes = new InfoBox();
+		infoBoxes.setMsg("Hier steht ein Text. Das kann ein Hinweis sein. Je länger umso mehr Platz ES");
+		infoBoxes.setTitle("Hinweis ES");
+		infoBoxes.setUrlTitle("Und ein externer Link ES");
+		infoBoxes.setUrl("https://www.bag.admin.ch/bag/en/home.html");
+		InfoBox infoBoxsq = new InfoBox();
+		infoBoxsq.setMsg("Hier steht ein Text. Das kann ein Hinweis sein. Je länger umso mehr Platz SQ");
+		infoBoxsq.setTitle("Hinweis SQ");
+		infoBoxsq.setUrlTitle("Und ein externer Link SQ");
+		infoBoxsq.setUrl("https://www.bag.admin.ch/bag/en/home.html");
+		InfoBox infoBoxbs = new InfoBox();
+		infoBoxbs.setMsg("Hier steht ein Text. Das kann ein Hinweis sein. Je länger umso mehr Platz BS");
+		infoBoxbs.setTitle("Hinweis BS");
+		infoBoxbs.setUrlTitle("Und ein externer Link BS");
+		infoBoxbs.setUrl("https://www.bag.admin.ch/bag/en/home.html");
+		InfoBox infoBoxhr = new InfoBox();
+		infoBoxhr.setMsg("Hier steht ein Text. Das kann ein Hinweis sein. Je länger umso mehr Platz HR");
+		infoBoxhr.setTitle("Hinweis HR");
+		infoBoxhr.setUrlTitle("Und ein externer Link HR");
+		infoBoxhr.setUrl("https://www.bag.admin.ch/bag/en/home.html");
+		InfoBox infoBoxrm = new InfoBox();
+		infoBoxrm.setMsg("Hier steht ein Text. Das kann ein Hinweis sein. Je länger umso mehr Platz RM");
+		infoBoxrm.setTitle("Hinweis RM");
+		infoBoxrm.setUrlTitle("Und ein externer Link RM");
+		infoBoxrm.setUrl("https://www.bag.admin.ch/bag/en/home.html");
+		InfoBox infoBoxsr = new InfoBox();
+		infoBoxsr.setMsg("Hier steht ein Text. Das kann ein Hinweis sein. Je länger umso mehr Platz SR");
+		infoBoxsr.setTitle("Hinweis SR");
+		infoBoxsr.setUrlTitle("Und ein externer Link SR");
+		infoBoxsr.setUrl("https://www.bag.admin.ch/bag/en/home.html");
+
 		InfoBoxCollection collection = new InfoBoxCollection();
 		collection.setDeInfoBox(infoBoxde);
 		collection.setEnInfoBox(infoBoxen);
 		collection.setFrInfoBox(infoBoxfr);
 		collection.setItInfoBox(infoBoxit);
+		collection.setPtInfoBox(infoBoxpt);
+		collection.setEsInfoBox(infoBoxes);
+		collection.setSqInfoBox(infoBoxsq);
+		collection.setHrInfoBox(infoBoxhr);
+		collection.setBsInfoBox(infoBoxbs);
+		collection.setRmInfoBox(infoBoxrm);
+		collection.setSrInfoBox(infoBoxsr);
 		configResponse.setInfoBox(collection);
 
 		SDKConfig config = new SDKConfig();
 		configResponse.setSdkConfig(config);
+		configResponse.setTweakCode(this.tweakCode);
 		return configResponse;
 	}
 	
 	public ConfigResponse mockConfigResponseWithForceUpdate() {
 		ConfigResponse configResponse = new ConfigResponse();
 		configResponse.setForceUpdate(true);
+		configResponse.setTweakCode(this.tweakCode);
 		return configResponse;
 	}
 }
