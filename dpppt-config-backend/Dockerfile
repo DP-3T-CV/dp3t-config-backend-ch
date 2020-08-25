@@ -10,7 +10,7 @@ ADD pom.xml /code/pom.xml
 
 # Adding source, compile and package into a fat jar
 ADD src /code/src
-RUN ["mvn", "package"]
+RUN ["mvn", "install"]
 #RUN mvn install -DskipTests
 RUN ls -a
 EXPOSE 8080
