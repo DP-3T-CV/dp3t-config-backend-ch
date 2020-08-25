@@ -15,7 +15,7 @@ RUN ls -a
 #RUN mvn install -DskipTests
 #RUN mvn install -Dmaven.test.skip=true
 RUN mvn install -DskipTests
-RUN ls -a
+RUN ls -a target
 EXPOSE 8080
 #CMD ["java","-Dspring.profiles.active=dev","-jar","target/dpppt-config-backend-1.0.0-SNAPSHOT.jar"]
 #CMD ["java","-jar","target/dpppt-config-backend-1.0.0-SNAPSHOT.jar","-Dspring.profiles.active=dev"]
