@@ -10,7 +10,8 @@ ADD pom.xml /code/pom.xml
 
 # Adding source, compile and package into a fat jar
 ADD src /code/src
-RUN ["mvn", "package"]
+#RUN ["mvn", "package"]
+RUN mvn install -DskipTests
 RUN ls -a target
 EXPOSE 8080
 #CMD ["java","-Dspring.profiles.active=dev","-jar","target/dpppt-config-backend-1.0.0-SNAPSHOT.jar"]
