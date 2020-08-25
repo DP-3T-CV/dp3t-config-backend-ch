@@ -12,6 +12,7 @@ ADD pom.xml /code/pom.xml
 ADD src /code/src
 RUN ["mvn", "install"]
 #RUN mvn install -DskipTests
+RUN mvn install -Dmaven.test.skip=true
 RUN ls -a
 EXPOSE 8080
 #CMD ["java","-Dspring.profiles.active=dev","-jar","target/dpppt-config-backend-1.0.0-SNAPSHOT.jar"]
