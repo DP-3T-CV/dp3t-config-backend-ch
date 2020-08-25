@@ -24,8 +24,8 @@ spec:
         imagePullPolicy: IfNotPresent
         name: configbackend
         ports:
-        - containerPort: 8113
-          name: 8113tcp01
+        - containerPort: 8080
+          name: 8080tcp01
           protocol: TCP
       imagePullSecrets:
       - name: nanosmon
