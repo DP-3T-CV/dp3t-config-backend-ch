@@ -204,6 +204,7 @@
         <plugin>
 				<groupId>pl.project13.maven</groupId>
 				<artifactId>git-commit-id-plugin</artifactId>
+		                <version>4.0.0</version>
 				<executions>
 				  <execution>
 					<id>retrieve-git-info</id>
@@ -219,7 +220,6 @@
 				  <skipPoms>false</skipPoms>
 				  <dateFormat>yyyyMMddHHmmss</dateFormat>
 				  <dateFormatTimeZone>UTC</dateFormatTimeZone>
-				  <failOnNoGitDirectory>false</failOnNoGitDirectory>
 				</configuration>
 			  </plugin>
 			  
