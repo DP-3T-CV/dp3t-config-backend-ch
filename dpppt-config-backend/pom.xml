@@ -219,6 +219,7 @@
 				  <skipPoms>false</skipPoms>
 				  <dateFormat>yyyyMMddHHmmss</dateFormat>
 				  <dateFormatTimeZone>UTC</dateFormatTimeZone>
+				  <failOnNoGitDirectory>false</failOnNoGitDirectory>
 				</configuration>
 			  </plugin>
 			  
