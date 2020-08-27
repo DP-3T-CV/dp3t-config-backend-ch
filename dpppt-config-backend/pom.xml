@@ -220,9 +220,10 @@
 				  <skipPoms>false</skipPoms>
 				  <dateFormat>yyyyMMddHHmmss</dateFormat>
 				  <dateFormatTimeZone>UTC</dateFormatTimeZone>
-					<failOnNoGitDirectory>false</failOnNoGitDirectory>
+					 <!-- <failOnNoGitDirectory>false</failOnNoGitDirectory> -->
+				  <failOnNoGitDirectory>true</failOnNoGitDirectory>
 				</configuration>
-			  </plugin>
+			  </plugin <!-- 
 			  
 			  <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
