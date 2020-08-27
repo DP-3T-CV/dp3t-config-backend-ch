@@ -200,7 +200,7 @@
                     <target>${java-version}</target>
                 </configuration>
             </plugin>
-            <!--reproducible builds -->
+            <!--reproducible builds 
         <plugin>
 				<groupId>pl.project13.maven</groupId>
 				<artifactId>git-commit-id-plugin</artifactId>
@@ -261,6 +261,9 @@
 				  </execution>
 				</executions>
 			  </plugin>
+		
+		
+		
 <!--            <plugin>-->
 <!--                <groupId>org.jacoco</groupId>-->
 <!--                <artifactId>jacoco-maven-plugin</artifactId>-->
@@ -353,6 +356,9 @@
 <!--                    </execution>-->
 <!--                </executions>-->
 <!--            </plugin>-->
+
+
+-->
         </plugins>
 <!--         <pluginManagement> -->
 <!--             <plugins> -->
