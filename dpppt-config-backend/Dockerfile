@@ -1,7 +1,7 @@
 FROM ubuntu
 
 # Install maven
-RUN apt-get -y update  && apt-get install default-jre default-jdk openjdk-8-jdk  maven -y
+RUN apt-get -y update  && apt-get install default-jre default-jdk openjdk-11-jdk  maven -y
 
 WORKDIR /code
 
