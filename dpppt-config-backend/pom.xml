@@ -201,7 +201,27 @@
                 </configuration>
             </plugin>
             <!--reproducible builds -->
-        
+        <plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<executions>
+				  <execution>
+					<id>retrieve-git-info</id>
+					<phase>prepare-package</phase>
+					<goals>
+					  <goal>revision</goal>
+					</goals>
+				  </execution>
+				</executions>
+				<configuration>
+				  <injectAllReactorProjects>true</injectAllReactorProjects>
+				  <runOnlyOnce>true</runOnlyOnce>
+				  <skipPoms>false</skipPoms>
+				  <dateFormat>yyyyMMddHHmmss</dateFormat>
+				  <dateFormatTimeZone>UTC</dateFormatTimeZone>
+				<failOnNoGitDirectory>false</failOnNoGitDirectory>
+				</configuration>
+			  </plugin>
 			  
 			  <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
