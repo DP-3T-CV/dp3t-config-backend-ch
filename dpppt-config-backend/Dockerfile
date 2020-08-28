@@ -20,5 +20,5 @@ EXPOSE 8080
 #CMD ["java","-Dspring.profiles.active=dev","-jar","target/dpppt-config-backend-1.0.0-SNAPSHOT.jar"]
 #CMD ["java","-jar","target/dpppt-config-backend-1.0.0-SNAPSHOT.jar","-Dspring.profiles.active=dev"]
 
-CMD ["java","-jar","target/dpppt-config-backend.jar","-jar ","-Dspring.profiles.active=dev"]
+CMD ["java","-jar","target/dpppt-config-backend.jar","-jar ","-Dspring.profiles.active=cloud-dev"]
 
