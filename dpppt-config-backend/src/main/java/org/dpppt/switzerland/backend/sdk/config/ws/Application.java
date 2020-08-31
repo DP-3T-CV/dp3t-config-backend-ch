@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
-@ComponentScan(basePackages = {"org.dpppt.switzerland.backend.sdk.config.ws.config"})
+@ComponentScan(basePackages = {"org.dpppt.switzerland.backend.sdk.config.ws.config", "org.dpppt.switzerland.backend.sdk.config.ws.controller"})
 @EnableAutoConfiguration
 @EnableWebMvc
 public class Application {
