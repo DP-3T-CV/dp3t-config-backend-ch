@@ -32,13 +32,11 @@ public class WSDevConfig extends WSBaseConfig {
 	}
     
     @Override
-    String getPrivateKey() {
-	  System.out.println("Ola PrivateKey ");  
+    String getPrivateKey() { 
         return new String(Base64.getDecoder().decode(privateKey));
     }
     @Override
     String getPublicKey() {
-	    System.out.println("Ola PublicKey");
         return new String(Base64.getDecoder().decode(publicKey));
     }
 
